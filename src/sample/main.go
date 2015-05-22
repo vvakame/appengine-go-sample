@@ -7,5 +7,10 @@ func init() {
 }
 
 func handleIndex(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello!"))
+	param := r.URL.Query().Get("param")
+	if param == "bye" {
+		w.Write([]byte("Good bye..."))
+	} else {
+		w.Write([]byte("Hello!"))
+	}
 }
