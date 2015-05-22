@@ -10,4 +10,4 @@ coverage: prepare
 	go tool cover -html=coverage.cov -o=coverage.html
 
 ci: coverage
-	goveralls -v -service=circle-ci -coverprofile=coverage.cov
+	goveralls -v -repotoken $(COVERALLS_TOKEN) -service circle-ci -coverprofile coverage.cov
